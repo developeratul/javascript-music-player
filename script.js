@@ -4,11 +4,27 @@ const controlButtons = document.querySelector('.control')
 
 const playPauseButton = document.querySelector('#PausePlay')
 const audio = document.querySelector('audio')
+let isPlaying = false
 
-playPauseButton.addEventListener('click', () => {
+const play = () => {
+  isPlaying = true
   audio.play()
   playPauseButton.classList.replace('fa-play', 'fa-pause')
   songImg.classList.add('anime')
+}
+const pause = () => {
+  isPlaying = false
+  audio.pause()
+  playPauseButton.classList.replace('fa-pause', 'fa-play')
+  songImg.classList.remove('anime')
+}
+
+playPauseButton.addEventListener('click', () => {
+  if (isPlaying) {
+    pause()
+  } else {
+    play()
+  }
 })
 
 mainCard.addEventListener('mouseover', (event) => {
