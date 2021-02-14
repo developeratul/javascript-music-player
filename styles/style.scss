@@ -7,34 +7,56 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
+body {
+  perspective: 500px;
+  user-select: none;
+  overflow-x: hidden;
+}
+.control {
+  transition: 0.2s;
+}
 #AllInBody {
   min-height: 100vh;
   display: grid;
   place-items: center;
+  background: linear-gradient(
+      45deg,
+      rgba(0, 238, 255, 0.842),
+      rgba(255, 0, 149, 0.651)
+    ),
+    url(../img/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   #ContentWarpper {
-    width: 30vw;
-    height: 70vh;
+    width: 25vw;
+    min-height: 70vh;
     border-radius: 10px;
-    box-shadow: 1px 2px 20px #ddd;
+    box-shadow: 1px 2px 10px rgb(20, 20, 20);
     padding: 20px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    backdrop-filter: blur(10px);
+    transition: 0.2s;
     #WholeCardContainer {
       width: 100%;
-      border: 1px solid;
       text-align: center;
       padding: 10px 0px;
       #MusicImg {
-        width: 50%;
+        width: 150px;
         margin: 10px auto;
         img {
           width: 100%;
+          height: 150px;
           border-radius: 100%;
+          border: 5px solid rgb(255, 0, 106);
+          transition: 0.2s;
         }
       }
       #MusicDesc {
+        margin: 0px 0px 20px 0px;
         h2 {
           font-size: 2rem;
           font-family: 'Reggae One', cursive;
@@ -42,12 +64,56 @@
           text-shadow: 1px 1px 2px black;
         }
         p {
-          color: rgb(85, 85, 85);
           font-weight: 900;
           padding: 5px 10px;
           margin: auto;
           text-align: center;
+          color: white;
         }
+      }
+      #MusicControls {
+        display: flex;
+        padding: 20px 0px 0px 0px;
+        justify-content: space-around;
+        align-items: center;
+        div {
+          cursor: pointer;
+          padding: 15px;
+          border-radius: 100%;
+          transition: 0.3s;
+          border: 2px solid rgb(255, 0, 76);
+          &:hover {
+            background: rgb(255, 0, 76);
+          }
+          &:hover i {
+            color: white;
+          }
+          i {
+            font-size: 1.1rem;
+            transition: 0.3s;
+            color: rgb(255, 0, 76);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  * {
+    cursor: default !important;
+  }
+  #ContentWarpper {
+    width: 50vw !important;
+  }
+}
+
+@media screen and (max-width: 493px) {
+  #ContentWarpper {
+    width: 90vw !important;
+    #MusicDesc {
+      p {
+        padding: 5px 2px !important;
       }
     }
   }

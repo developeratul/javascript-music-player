@@ -8,19 +8,38 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow-x: hidden;
+}
+
+.control {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
 #AllInBody {
   min-height: 100vh;
   display: -ms-grid;
   display: grid;
   place-items: center;
+  background: linear-gradient(45deg, rgba(0, 238, 255, 0.842), rgba(255, 0, 149, 0.651)), url(../img/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #AllInBody #ContentWarpper {
-  width: 30vw;
-  height: 70vh;
+  width: 25vw;
+  min-height: 70vh;
   border-radius: 10px;
-  -webkit-box-shadow: 1px 2px 20px #ddd;
-          box-shadow: 1px 2px 20px #ddd;
+  -webkit-box-shadow: 1px 2px 10px #141414;
+          box-shadow: 1px 2px 10px #141414;
   padding: 20px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -35,23 +54,34 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 #AllInBody #ContentWarpper #WholeCardContainer {
   width: 100%;
-  border: 1px solid;
   text-align: center;
   padding: 10px 0px;
 }
 
 #AllInBody #ContentWarpper #WholeCardContainer #MusicImg {
-  width: 50%;
+  width: 150px;
   margin: 10px auto;
 }
 
 #AllInBody #ContentWarpper #WholeCardContainer #MusicImg img {
   width: 100%;
+  height: 150px;
   border-radius: 100%;
+  border: 5px solid #ff006a;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#AllInBody #ContentWarpper #WholeCardContainer #MusicDesc {
+  margin: 0px 0px 20px 0px;
 }
 
 #AllInBody #ContentWarpper #WholeCardContainer #MusicDesc h2 {
@@ -62,10 +92,64 @@
 }
 
 #AllInBody #ContentWarpper #WholeCardContainer #MusicDesc p {
-  color: #555555;
   font-weight: 900;
   padding: 5px 10px;
   margin: auto;
   text-align: center;
+  color: white;
+}
+
+#AllInBody #ContentWarpper #WholeCardContainer #MusicControls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 0px 0px 0px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#AllInBody #ContentWarpper #WholeCardContainer #MusicControls div {
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border: 2px solid #ff004c;
+}
+
+#AllInBody #ContentWarpper #WholeCardContainer #MusicControls div:hover {
+  background: #ff004c;
+}
+
+#AllInBody #ContentWarpper #WholeCardContainer #MusicControls div:hover i {
+  color: white;
+}
+
+#AllInBody #ContentWarpper #WholeCardContainer #MusicControls div i {
+  font-size: 1.1rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #ff004c;
+}
+
+@media screen and (max-width: 900px) {
+  * {
+    cursor: default !important;
+  }
+  #ContentWarpper {
+    width: 50vw !important;
+  }
+}
+
+@media screen and (max-width: 493px) {
+  #ContentWarpper {
+    width: 90vw !important;
+  }
+  #ContentWarpper #MusicDesc p {
+    padding: 5px 2px !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */
