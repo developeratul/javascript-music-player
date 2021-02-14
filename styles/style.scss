@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+#AllInBody {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  #ContentWarpper {
+    width: 30vw;
+    height: 70vh;
+    border-radius: 10px;
+    box-shadow: 1px 2px 20px #ddd;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    #WholeCardContainer {
+      width: 100%;
+      border: 1px solid;
+      text-align: center;
+      padding: 10px 0px;
+      #MusicImg {
+        width: 50%;
+        margin: 10px auto;
+        img {
+          width: 100%;
+          border-radius: 100%;
+        }
+      }
+      #MusicDesc {
+        h2 {
+          font-size: 2rem;
+          font-family: 'Reggae One', cursive;
+          color: rgb(252, 0, 147);
+          text-shadow: 1px 1px 2px black;
+        }
+        p {
+          color: rgb(85, 85, 85);
+          font-weight: 900;
+          padding: 5px 10px;
+          margin: auto;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

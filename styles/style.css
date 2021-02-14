@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Reggae+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#AllInBody {
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+#AllInBody #ContentWarpper {
+  width: 30vw;
+  height: 70vh;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 2px 20px #ddd;
+          box-shadow: 1px 2px 20px #ddd;
+  padding: 20px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#AllInBody #ContentWarpper #WholeCardContainer {
+  width: 100%;
+  border: 1px solid;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+#AllInBody #ContentWarpper #WholeCardContainer #MusicImg {
+  width: 50%;
+  margin: 10px auto;
+}
+
+#AllInBody #ContentWarpper #WholeCardContainer #MusicImg img {
+  width: 100%;
+  border-radius: 100%;
+}
+
+#AllInBody #ContentWarpper #WholeCardContainer #MusicDesc h2 {
+  font-size: 2rem;
+  font-family: 'Reggae One', cursive;
+  color: #fc0093;
+  text-shadow: 1px 1px 2px black;
+}
+
+#AllInBody #ContentWarpper #WholeCardContainer #MusicDesc p {
+  color: #555555;
+  font-weight: 900;
+  padding: 5px 10px;
+  margin: auto;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
