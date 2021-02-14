@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     ></script>
     <script defer src="./script.js"></script>
-    <title>MR MUSIC PLAYER</title>
+    <title>DevR MUSIC PLAYER</title>
   </head>
   <body>
     <section id="AllInBody">
@@ -26,14 +26,20 @@
             <p>Dj Snake</p>
           </div>
           <div id="MusicImg">
-            <img id="SongImg" src="./img/music2.jpg" alt="Music Image - DevR" />
+            <img
+              draggable="false"
+              id="SongImg"
+              src="./img/music2.jpg"
+              alt="Music Image - DevR"
+            />
           </div>
+          <audio src="./music/music1.mp3"></audio>
           <div id="MusicControls">
             <div class="control" id="Previous" title="Previous Song">
               <i class="fas fa-backward"></i>
             </div>
-            <div class="control" id="PausePlay" title="Pause/ play">
-              <i class="fas fa-play"></i>
+            <div class="control" title="Pause/ play">
+              <i id="PausePlay" class="fas fa-play"></i>
             </div>
             <div class="control" id="Next" title="Next Music">
               <i class="fas fa-forward"></i>
