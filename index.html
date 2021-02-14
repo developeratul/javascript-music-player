@@ -22,27 +22,22 @@
       <div id="ContentWarpper">
         <div id="WholeCardContainer">
           <div id="MusicDesc">
-            <h2>A different way</h2>
-            <p>Dj Snake</p>
+            <h2 id="SongName"></h2>
+            <p id="Artist"></p>
           </div>
           <div id="MusicImg">
-            <img
-              draggable="false"
-              id="SongImg"
-              src="./img/music2.jpg"
-              alt="Music Image - DevR"
-            />
+            <img draggable="false" id="SongImg" alt="Music Image - DevR" />
           </div>
-          <audio src="./music/music1.mp3"></audio>
+          <audio></audio>
           <div id="MusicControls">
-            <div class="control" id="Previous" title="Previous Song">
-              <i class="fas fa-backward"></i>
+            <div class="control" title="Previous Song">
+              <i id="Previous" class="fas fa-backward"></i>
             </div>
             <div class="control" title="Pause/ play">
               <i id="PausePlay" class="fas fa-play"></i>
             </div>
-            <div class="control" id="Next" title="Next Music">
-              <i class="fas fa-forward"></i>
+            <div class="control" title="Next Music">
+              <i id="Next" class="fas fa-forward"></i>
             </div>
           </div>
         </div>
