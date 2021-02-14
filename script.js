@@ -61,6 +61,8 @@ previousButton.addEventListener('click', () => {
   if (index >= 0) {
     loadMusic(index--)
     play()
+  } else {
+    pause()
   }
 })
 
