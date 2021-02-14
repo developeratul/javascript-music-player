@@ -38,6 +38,42 @@ const songDataBase = [
     artist: 'Unknown',
     imgSrc: './img/music4.jpg',
   },
+  {
+    songSrc: './music/music5.mp3',
+    title: 'Delicate',
+    artist: 'Taylor Swift',
+    imgSrc: './img/music5.jpg',
+  },
+  {
+    songSrc: './music/music6.mp3',
+    title: 'Me Gente Riddim',
+    artist: 'Dj Snake',
+    imgSrc: './img/music6.jpg',
+  },
+  {
+    songSrc: './music/music7.mp3',
+    title: 'Lights Goes Down',
+    artist: 'Dj Snake',
+    imgSrc: './img/music7.jpg',
+  },
+  {
+    songSrc: './music/music8.mp3',
+    title: 'Public Enemy',
+    artist: 'Yellow Claw',
+    imgSrc: './img/music8.jpg',
+  },
+  {
+    songSrc: './music/music9.mp3',
+    title: 'Try Me',
+    artist: 'Dj Snake',
+    imgSrc: './img/music9.jpg',
+  },
+  {
+    songSrc: './music/music10.mp3',
+    title: 'Paris',
+    artist: 'Dj Snake',
+    imgSrc: './img/music10.jpg',
+  },
 ]
 
 const loadMusic = () => {
@@ -50,7 +86,7 @@ const loadMusic = () => {
 loadMusic()
 
 nextButton.addEventListener('click', () => {
-  if (index <= songDataBase.length) {
+  if (index < songDataBase.length - 1) {
     loadMusic(index++)
     play()
   } else {
@@ -58,7 +94,7 @@ nextButton.addEventListener('click', () => {
   }
 })
 previousButton.addEventListener('click', () => {
-  if (index >= 0) {
+  if (index > 0) {
     loadMusic(index--)
     play()
   } else {
