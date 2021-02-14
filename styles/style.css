@@ -122,6 +122,13 @@ body {
 
 #AllInBody #ContentWarpper #WholeCardContainer #MusicControls div:nth-child(odd) i {
   border: none;
+  border: 2px solid transparent;
+}
+
+#AllInBody #ContentWarpper #WholeCardContainer #MusicControls div:nth-child(odd) i:hover {
+  border-color: #ff0080;
+  background: none;
+  color: #ff0080;
 }
 
 #AllInBody #ContentWarpper #WholeCardContainer #MusicControls div i {

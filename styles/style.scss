@@ -85,6 +85,12 @@ body {
           &:nth-child(odd) {
             i {
               border: none;
+              border: 2px solid transparent;
+              &:hover {
+                border-color: rgb(255, 0, 128);
+                background: none;
+                color: rgb(255, 0, 128);
+              }
             }
           }
           i {
