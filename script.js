@@ -134,12 +134,22 @@ const timeStamp = (event) => {
   const full_minute = Math.floor(duration / 60)
   const start_second = Math.floor(currentTime % 60)
   const start_minute = Math.floor(currentTime / 60)
-  endDuration.textContent = `${full_minute} : ${full_second}`
-  startDuration.textContent = `${start_minute} : ${start_second}`
+  const totalDuration = `${full_minute} : ${full_second}`
+  const currenDuration = `${start_minute} : ${start_second}`
+  if (duration) {
+    endDuration.textContent = totalDuration
+  }
+  if (currenDuration < 10) {
+    currenDuration = `0${currenDuration}`
+  }
+  startDuration.textContent = currenDuration
   const percentage = (currentTime / duration) * 100
   meter.style.width = `${percentage}%`
 }
 audio.addEventListener('timeupdate', timeStamp)
+audio.addEventListener('ended', () => {
+  return index++
+})
 
 document.querySelector('#Year').innerHTML = currentYear
 
