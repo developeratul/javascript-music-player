@@ -14,6 +14,7 @@ const songImgAtTheTop = document.querySelector('img')
 let startDuration = document.querySelector('#Start')
 const endDuration = document.querySelector('#End')
 const meter = document.querySelector('#ProgrssMeterChild')
+const progressBar = document.querySelector('#ProgressMeterContainer')
 
 let isPlaying = false
 let index = 0
@@ -139,16 +140,15 @@ const timeStamp = (event) => {
   if (duration) {
     endDuration.textContent = totalDuration
   }
-  if (currenDuration < 10) {
-    currenDuration = `0${currenDuration}`
-  }
   startDuration.textContent = currenDuration
   const percentage = (currentTime / duration) * 100
   meter.style.width = `${percentage}%`
 }
 audio.addEventListener('timeupdate', timeStamp)
-audio.addEventListener('ended', () => {
-  return index++
+progressBar.addEventListener('click', (event) => {
+  const { duration } = audio
+  const moreProgress = (event.offsetX / event.srcElement.clientWidth) * duration
+  audio.currentTime = moreProgress
 })
 
 document.querySelector('#Year').innerHTML = currentYear
