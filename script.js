@@ -88,6 +88,10 @@ const loadMusic = () => {
   songName.textContent = songDataBase[index].title
   songImgAtTheTop.src = songDataBase[index].imgSrc
 }
+audio.addEventListener('ended', () => {
+  loadMusic(index++)
+  play()
+})
 
 loadMusic()
 
