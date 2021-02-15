@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(252, 0, 147);
+  border-radius: 50px;
 }
 body {
   perspective: 500px;
@@ -19,6 +28,7 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
+  padding: 50px 0px;
   background: linear-gradient(
       45deg,
       rgba(0, 238, 255, 0.842),
@@ -109,6 +119,49 @@ body {
         }
       }
     }
+    #Progress_elements {
+      padding: 10px 0px;
+      background: linear-gradient(to left, rgb(0, 238, 255), rgb(255, 0, 106));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: 'Goldman', cursive;
+      font-weight: 900;
+      text-shadow: 1px 1px 1px white;
+      #Progressduration {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      #ProgressMeterContainer {
+        width: 90%;
+        height: 5px;
+        background: white;
+        border-radius: 50px;
+        margin: 20px auto 5px auto;
+        cursor: pointer;
+        #ProgrssMeterChild {
+          width: 0%;
+          height: 100%;
+          background: linear-gradient(
+            45deg,
+            rgb(0, 225, 255),
+            rgb(255, 0, 119)
+          );
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background: rgb(255, 0, 119);
+  padding: 5px 0px;
+  text-align: center;
+  color: white;
+  a {
+    text-decoration: none;
+    color: rgb(0, 255, 255);
   }
 }
 
@@ -123,7 +176,11 @@ body {
     transform: rotate(360deg);
   }
 }
-
+@media screen and (max-width: 1125px) {
+  #ContentWarpper {
+    width: 40vw !important;
+  }
+}
 @media screen and (max-width: 900px) {
   * {
     cursor: default !important;
@@ -133,7 +190,7 @@ body {
   }
 }
 
-@media screen and (max-width: 493px) {
+@media screen and (max-width: 567px) {
   #ContentWarpper {
     width: 90vw !important;
     #MusicDesc {

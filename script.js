@@ -1,6 +1,7 @@
 const mainCard = document.querySelector('#ContentWarpper')
 const songImg = document.querySelector('#SongImg')
 const controlButtons = document.querySelector('.control')
+const currentYear = new Date().getFullYear()
 
 const playPauseButton = document.querySelector('#PausePlay')
 const audio = document.querySelector('audio')
@@ -9,6 +10,10 @@ const songName = document.querySelector('#SongName')
 const previousButton = document.querySelector('#Previous')
 const nextButton = document.querySelector('#Next')
 const songImgAtTheTop = document.querySelector('img')
+
+let startDuration = document.querySelector('#Start')
+const endDuration = document.querySelector('#End')
+const meter = document.querySelector('#ProgrssMeterChild')
 
 let isPlaying = false
 let index = 0
@@ -46,7 +51,7 @@ const songDataBase = [
   },
   {
     songSrc: './music/music6.mp3',
-    title: 'Me Gente Riddim',
+    title: 'MI Gente Riddim',
     artist: 'Dj Snake',
     imgSrc: './img/music6.jpg',
   },
@@ -122,6 +127,21 @@ playPauseButton.addEventListener('click', () => {
     play()
   }
 })
+let minute, second
+const timeStamp = (event) => {
+  let { duration, currentTime } = event.srcElement
+  const full_second = Math.floor(duration % 60)
+  const full_minute = Math.floor(duration / 60)
+  const start_second = Math.floor(currentTime % 60)
+  const start_minute = Math.floor(currentTime / 60)
+  endDuration.textContent = `${full_minute} : ${full_second}`
+  startDuration.textContent = `${start_minute} : ${start_second}`
+  const percentage = (currentTime / duration) * 100
+  meter.style.width = `${percentage}%`
+}
+audio.addEventListener('timeupdate', timeStamp)
+
+document.querySelector('#Year').innerHTML = currentYear
 
 mainCard.addEventListener('mouseover', (event) => {
   const xAxis = (window.innerWidth / 2 - event.pageX) / 15

@@ -1,11 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Reggae+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Goldman&display=swap");
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fc0093;
+  border-radius: 50px;
 }
 
 body {
@@ -28,6 +39,7 @@ body {
   display: -ms-grid;
   display: grid;
   place-items: center;
+  padding: 50px 0px;
   background: linear-gradient(45deg, rgba(0, 238, 255, 0.842), rgba(255, 0, 149, 0.651)), url(../img/bg.jpg);
   background-position: center;
   background-size: cover;
@@ -147,6 +159,56 @@ body {
   color: white;
 }
 
+#AllInBody #ContentWarpper #Progress_elements {
+  padding: 10px 0px;
+  background: -webkit-gradient(linear, right top, left top, from(#00eeff), to(#ff006a));
+  background: linear-gradient(to left, #00eeff, #ff006a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Goldman', cursive;
+  font-weight: 900;
+  text-shadow: 1px 1px 1px white;
+}
+
+#AllInBody #ContentWarpper #Progress_elements #Progressduration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#AllInBody #ContentWarpper #Progress_elements #ProgressMeterContainer {
+  width: 90%;
+  height: 5px;
+  background: white;
+  border-radius: 50px;
+  margin: 20px auto 5px auto;
+  cursor: pointer;
+}
+
+#AllInBody #ContentWarpper #Progress_elements #ProgressMeterContainer #ProgrssMeterChild {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(45deg, #00e1ff, #ff0077);
+  border-radius: 50px;
+}
+
+footer {
+  background: #ff0077;
+  padding: 5px 0px;
+  text-align: center;
+  color: white;
+}
+
+footer a {
+  text-decoration: none;
+  color: cyan;
+}
+
 .anime {
   -webkit-animation: imgAnime 3s linear infinite both;
           animation: imgAnime 3s linear infinite both;
@@ -174,6 +236,12 @@ body {
   }
 }
 
+@media screen and (max-width: 1125px) {
+  #ContentWarpper {
+    width: 40vw !important;
+  }
+}
+
 @media screen and (max-width: 900px) {
   * {
     cursor: default !important;
@@ -183,7 +251,7 @@ body {
   }
 }
 
-@media screen and (max-width: 493px) {
+@media screen and (max-width: 567px) {
   #ContentWarpper {
     width: 90vw !important;
   }
